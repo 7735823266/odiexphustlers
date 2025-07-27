@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chilika Lake, Odisha</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #09170F;
+      color: #fefefe;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #FFD700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      max-height: 380px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+      border: 0;
+      border-radius: 10px;
+    }
+    .more-info {
+      margin-top: 2rem;
+    }
+    .more-info h3 {
+      color: #FFDE59;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Chilika Lake, Odisha</h1>
+  </header>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="chilika 1.jpg" alt="Chilika Lake 1" class="active">
+      <img src="chilika 2.jpg" alt="Chilika Lake 2">
+      <img src="chilika 3.jpg" alt="Chilika Lake 3">
+      <div class="carousel-controls">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>About Chilika Lake</h2>
+      <p>Chilika Lake is the largest brackish water lagoon in Asia, located along the east coast of India in the state of Odisha. Spanning over 1,100 square kilometers, it is home to a rich ecosystem of marine life, migratory birds, and scenic islands.</p>
+      <p>Popular attractions include boating to Kalijai Island, spotting dolphins at Satapada, and witnessing millions of birds at the Nalabana Bird Sanctuary. The lake is a Ramsar Wetland of International Importance, reflecting its ecological significance.</p>
+    </div>
+
+    <div class="more-info">
+      <h3>Interesting Facts</h3>
+      <ul>
+        <li>Chilika Lake hosts over 160 species of birds during the winter season, including flamingos and pelicans.</li>
+        <li>The Irrawaddy Dolphin, an endangered species, can be spotted in the Satapada region of the lake.</li>
+        <li>It supports more than 150,000 fisherfolk living in and around the lake basin.</li>
+        <li>Chilika’s ecosystem includes 225 species of fish and countless plants and plankton.</li>
+      </ul>
+
+      <h3>Best Time to Visit</h3>
+      <p>November to February is the best time to visit, especially for birdwatching and dolphin-spotting tours. The weather is pleasant, and migratory birds are abundant.</p>
+
+      <h3>Timings & Entry</h3>
+      <p>Chilika is open to visitors from 6:00 AM to 6:00 PM. Boating tours are available from OTDC and local guides at Satapada and Balugaon.</p>
+    </div>
+
+    <h2>Map Location</h2>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221638.9677028889!2d85.2138560139399!3d19.687375859937788!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a181f493428369b%3A0x8c7562c60bcda7a1!2sChilika%20Lake!5e1!3m2!1sen!2sin!4v1753550162568!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>

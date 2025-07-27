@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jagannath Temple, Puri</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #09170F;
+      color: #fefefe;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #FFD700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      max-height: 380px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+      border: 0;
+      border-radius: 10px;
+    }
+    .more-info {
+      margin-top: 2rem;
+    }
+    .more-info h3 {
+      color: #FFDE59;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jagannath Temple, Puri</h1>
+  </header>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="https://www.tripsavvy.com/thmb/3pNFFiPbSTcg-CgGNE8Wx_NsyqM=/3559x2357/filters:fill(auto,1)/_DSC0713_Snapseed_Darkroom-819d0b229974460e8141622c4494e2ed.jpg" alt="Jagannath Temple 1" class="active">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.X1rWd0-cl193a-11vVJZfAHaE9?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jagannath Temple 2">
+      <img src="https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/08/capture-1629702910.jpg" alt="Jagannath Temple 3">
+      <div class="carousel-controls">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>About the Temple</h2>
+      <p>The Jagannath Temple in Puri is one of the most sacred pilgrimage destinations in India, dedicated to Lord Jagannath, a form of Lord Vishnu. Constructed in the 12th century by King Anantavarman Chodaganga Deva, the temple is known for its towering spire, annual Rath Yatra (Chariot Festival), and unique rituals that differ from other Hindu temples.</p>
+      <p>This architectural marvel is a symbol of spiritual devotion and Odia culture. Non-Hindus are not allowed inside the main sanctum, but the grandeur of the temple can be appreciated from outside, especially from the nearby Raghunandan Library terrace.</p>
+    </div>
+
+    <div class="more-info">
+      <h3>Interesting Facts</h3>
+      <ul>
+        <li>The temple’s flag changes direction with the wind every day—without fail.</li>
+        <li>The Sudarshan Chakra atop the temple appears to face you no matter where you stand.</li>
+        <li>No birds or planes ever fly directly above the temple dome.</li>
+        <li>The food cooked in temple kitchens feeds over 100,000 people daily—without ever running short.</li>
+      </ul>
+
+      <h3>Best Time to Visit</h3>
+      <p>October to February is ideal for visiting due to pleasant weather. The annual Rath Yatra in June/July is the grandest celebration here and attracts millions of devotees worldwide.</p>
+
+      <h3>Temple Timings</h3>
+      <p>The temple opens from 5:00 AM to 10:00 PM daily. Entry is free, but strict dress codes and discipline are followed within the premises.</p>
+    </div>
+
+    <h2>Map Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.5591178362897!2d85.81536367485373!3d19.804937881555595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19c6b8bfe386af%3A0x8f052c84639c7d48!2sShree%20Jagannatha%20Temple%20Puri!5e1!3m2!1sen!2sin!4v1753548672330!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>

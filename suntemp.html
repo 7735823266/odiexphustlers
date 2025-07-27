@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konark Sun Temple, Odisha</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #09170F;
+      color: #fefefe;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #FFD700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      max-height: 380px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+      border: 0;
+      border-radius: 10px;
+    }
+    .more-info {
+      margin-top: 2rem;
+    }
+    .more-info h3 {
+      color: #FFDE59;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Konark Sun Temple, Odisha</h1>
+  </header>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="https://i.pinimg.com/736x/d7/69/35/d7693575afa421aaa8a437b4fe79f7b6.jpg" alt="Konark Sun Temple 1" class="active">
+      <img src="konarka 2.jpg" alt="Konark Sun Temple 2">
+      <img src="konarka 3.jpg" alt="Konark Sun Temple 3">
+      <div class="carousel-controls">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>About the Temple</h2>
+      <p>The Konark Sun Temple, built in the 13th century by King Narasimhadeva I of the Eastern Ganga Dynasty, is a UNESCO World Heritage Site. This architectural marvel was designed as a colossal chariot for the Sun God, Surya, drawn by seven horses and supported on 24 intricately carved wheels.</p>
+      <p>The temple stands as an epitome of ancient Odisha's architectural brilliance and is admired for its intricate stone carvings, which depict deities, animals, dancers, and scenes from everyday life.</p>
+    </div>
+
+    <div class="more-info">
+      <h3>Interesting Facts</h3>
+      <ul>
+        <li>The 24 wheels of the temple are also sundials, capable of telling the time accurately.</li>
+        <li>The temple's magnetic structure was believed to cause ships to lose direction, hence called the "Black Pagoda" by European sailors.</li>
+        <li>Much of the main temple structure is in ruins, but the Jagamohana (assembly hall) still stands and showcases impressive architecture.</li>
+        <li>The Konark Dance Festival, held annually in December, celebrates India's classical dance heritage at this very site.</li>
+      </ul>
+
+      <h3>Best Time to Visit</h3>
+      <p>October to February is the most pleasant time to visit Konark. The Konark Dance Festival during this period adds cultural vibrance to your trip.</p>
+
+      <h3>Temple Timings</h3>
+      <p>The monument is open daily from sunrise to sunset. Entry tickets can be booked online or at the gate.</p>
+    </div>
+
+    <h2>Map Location</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3458.757673263744!2d86.0919614748561!3d19.887595281491343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19f2a097819bbf%3A0xed9983ca391e3247!2sSun%20Temple%2C%20Konarak!5e1!3m2!1sen!2sin!4v1753549918267!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>

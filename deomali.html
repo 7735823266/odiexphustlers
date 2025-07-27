@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deomali Hills, Odisha</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #09170F;
+      color: #fefefe;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #FFD700;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      max-height: 380px;
+    }
+    .carousel img {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: none;
+    }
+    .carousel img.active {
+      display: block;
+    }
+    .carousel-controls {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carousel-controls button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 2rem;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 2rem;
+      border: 0;
+      border-radius: 10px;
+    }
+    .more-info {
+      margin-top: 2rem;
+    }
+    .more-info h3 {
+      color: #FFDE59;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Deomali Hills, Odisha</h1>
+  </header>
+
+  <div class="container">
+    <div class="carousel">
+      <img src="deomali 1.jpg" alt="Deomali Hill 1" class="active">
+      <img src="deomali 2.jpg" alt="Deomali Hill 2">
+      <img src="deomali 3.jpg" alt="Deomali Hill 3">
+      <div class="carousel-controls">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+      </div>
+    </div>
+
+    <div class="description">
+      <h2>About Deomali Hills</h2>
+      <p>Deomali Hill is the highest peak in Odisha, rising to a height of about 1,672 meters. It is nestled in the Eastern Ghats and located in the Koraput district. This picturesque hill is surrounded by dense forests, deep valleys, and rolling mountains, making it an ideal spot for nature lovers and adventure enthusiasts.</p>
+      <p>Known for its panoramic views and cool climate, Deomali is a popular destination for trekking, photography, and picnicking. The road leading up to the hilltop is an adventure in itself, with winding turns and breathtaking sceneries.</p>
+    </div>
+
+    <div class="more-info">
+      <h3>Interesting Facts</h3>
+      <ul>
+        <li>Deomali is part of the Chandragiri-Pottangi sub-range of the Eastern Ghats.</li>
+        <li>It is Odisha's highest point and among the tallest peaks in the Eastern Ghats.</li>
+        <li>Clouds often float just above or around the hilltop, offering surreal views.</li>
+        <li>It’s a biodiversity hotspot, home to unique flora and fauna of the region.</li>
+      </ul>
+
+      <h3>Best Time to Visit</h3>
+      <p>The best time to visit Deomali Hills is between October and February when the weather is cool and visibility is clear for scenic views and treks.</p>
+
+      <h3>Getting There</h3>
+      <p>Deomali is around 60 km from Koraput town and is accessible by road. Visitors usually travel from Jeypore or Koraput by private vehicles or rented taxis.</p>
+    </div>
+
+    <h2>Map Location</h2>
+    <iframe src="https://www.google.com/maps?q=Deomali+Hills,+Odisha&output=embed" allowfullscreen loading="lazy"></iframe>
+  </div>
+
+  <script>
+    let current = 0;
+    const slides = document.querySelectorAll('.carousel img');
+
+    function showSlide(index) {
+      slides.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) img.classList.add('active');
+      });
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+  </script>
+</body>
+</html>
